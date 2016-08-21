@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-from python_speech_features import mfcc
-from python_speech_features import logfbank
+import sys
+sys.path.append('python_speech_features')
+from base import mfcc, logfbank
+#from base import logfbank
 import scipy.io.wavfile as wav
 
 (rate,sig) = wav.read("english.wav")
