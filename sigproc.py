@@ -5,6 +5,13 @@ import decimal
 import numpy
 import math
 
+def meansubtract(sig):
+    return sig - sig.mean()
+
+def signormalize(sig):
+    sig = meansubtract(sig)
+    return sig/numpy.absolute(sig).max()
+
 
 def round_half_up(number):
     return int(decimal.Decimal(number).quantize(decimal.Decimal('1'), rounding=decimal.ROUND_HALF_UP))
